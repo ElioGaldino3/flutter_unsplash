@@ -65,9 +65,20 @@ class ImageListWidget extends HookWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        image.user.name,
-                        style: const TextStyle(color: Colors.white),
+                      Row(
+                        children: [
+                          ClipOval(
+                            child: ExtendedImage.network(
+                              image.user.profileImage,
+                              width: 24,
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                          Text(
+                            image.user.name,
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                        ],
                       ),
                       Row(
                         children: [
@@ -83,7 +94,7 @@ class ImageListWidget extends HookWidget {
                       ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),
