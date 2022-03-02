@@ -58,12 +58,30 @@ class ImageListWidget extends HookWidget {
                   fit: BoxFit.cover,
                 ),
                 Container(
-                    width: double.infinity, height: 30, color: Colors.black),
+                    width: double.infinity, height: 40, color: Colors.black),
                 Container(
-                  margin: const EdgeInsets.only(bottom: 8),
-                  child: Text(
-                    image.user.name,
-                    style: const TextStyle(color: Colors.white),
+                  margin: const EdgeInsets.only(bottom: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        image.user.name,
+                        style: const TextStyle(color: Colors.white),
+                      ),
+                      Row(
+                        children: [
+                          const Icon(
+                            Icons.star,
+                            color: Colors.white,
+                          ),
+                          Text(
+                            image.likes.toString(),
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 )
               ],

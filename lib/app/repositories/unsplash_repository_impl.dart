@@ -25,7 +25,8 @@ class UnsplashRepositoryImpl implements UnsplashRepositoryInterface {
 
       final photos = <UnsplashImageModel>[];
 
-      for (var result in query == null ? response.data : response.data['results']) {
+      for (var result
+          in query == null ? response.data : response.data['results']) {
         photos.add(UnsplashImageModel.fromMap(result));
       }
 
